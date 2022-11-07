@@ -18,12 +18,10 @@ const CreateSearch = () => {
                 <form className="search" action="#">
                     <input type="text" placeholder="Type Something" id="searchText" name="searchKeyword"/>
                     <i className="fa fa-search"></i>
-                    <button className="button-main"></button>
+                    <button className="button-main">Search</button>
                 </form>
                 </div>
             </div>
-            
-
             <Modal/>
         </div>
         
