@@ -126,7 +126,7 @@ p {
 	border-radius: 23px;
 }
 
-.main-button a p{
+.main-button p{
   font-size: 14px;
   color: #fff;
   background-color: #e75e8d;
@@ -141,12 +141,12 @@ p {
   overflow: hidden;
 }
 
-.main-button a p:hover {
+.main-button p:hover {
   background-color: #fff;
   color: #e75e8d;
 }
 
-.main-border-button a {
+.main-border-button {
   font-size: 14px;
   color: #ec6090;
   background-color: transparent;
@@ -162,18 +162,18 @@ p {
   overflow: hidden;
 }
 
-.main-border-button a:hover {
+.main-border-button:hover {
   border-color: #fff;
   background-color: #fff;
   color: #e75e8d;
 }
 
-.border-no-active a {
+.border-no-active {
   border-color: #666;
   color: #666;
 }
 
-.border-no-active a:hover{
+.border-no-active:hover{
   border-color: #666;
   color: #666;
   background-color: transparent;

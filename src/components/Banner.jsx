@@ -8,11 +8,11 @@ const Banner = () => {
         <div className="main-banner">
             <div className="row">
                 <div className="col-lg-7">
-                    <div classNameName="header-text">
+                    <div className="header-text">
                         <h6>Welcome To SpartaCodingClub</h6>
                         <h4><em>Browse</em> Yu-Gi-Oh Cards Meme</h4>
                         <div className="main-button">
-                            <a href={() => false}><p>Browse Now</p></a>
+                            <p>Browse Now</p>
                         </div>
                     </div>
                 </div>

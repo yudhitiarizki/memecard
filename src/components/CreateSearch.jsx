@@ -3,21 +3,22 @@ import '../assets/css/style.css';
 import '../assets/css/fontawesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import Modal from './Modal'
+import Modal from './Modal';
+import { Link } from "react-router-dom";
 
 const CreateSearch = () => {
     return (
-        <div class="heading-section col-12 mb-4 test">
-            <div class="main-button">
-                <a href={() => false} data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <p>Create</p> </a>
+        <div className="heading-section col-12 mb-4 test">
+            <div className="main-button">
+                <Link to={() => false} data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <p>Create</p> </Link>
             </div>
 
-            <div class="search-input-parent">
-                <div class="search-input mr-2">
-                <form class="search" action="#">
-                    <input type="text" placeholder="Type Something" id="searchText" name="searchKeyword" onkeypress="handle" />
-                    <i class="fa fa-search"></i>
-                    <button class="button-main">Search</button>
+            <div className="search-input-parent">
+                <div className="search-input mr-2">
+                <form className="search" action="#">
+                    <input type="text" placeholder="Type Something" id="searchText" name="searchKeyword"/>
+                    <i className="fa fa-search"></i>
+                    <button className="button-main"></button>
                 </form>
                 </div>
             </div>
