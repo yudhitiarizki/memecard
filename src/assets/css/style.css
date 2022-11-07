@@ -706,3 +706,26 @@ body {
   background-color: #f2f5fe;
   border: solid 1px #e75e8d;
 }
+
+.goback{
+  margin-bottom: 20px;
+}
+
+.goback_button{
+  border-width: 0px;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  background-color: #e75e8d;
+}
+
+.goback_button i{
+  margin-right: 15px;
+}
+
+.goback_button:hover{
+  color: #e75e8d;
+  background-color: #f2f5fe;
+}
