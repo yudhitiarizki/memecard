@@ -9,13 +9,13 @@ import React from "react";
 function App() {
   return (
     <Layout>
-        <Main>
-        <Banner/>
-            <List>
-                <CreateSearch/>
-            </List>
-        </Main>
-        <Footer/>
+      <Main>
+        <Banner />
+        <List>
+          <CreateSearch />
+        </List>
+      </Main>
+      <Footer />
     </Layout>
   );
 }
