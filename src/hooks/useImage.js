@@ -24,12 +24,9 @@ const useCard = (title,imagelink,category,description,scale) => {
     }
     backImage.onload = () => setBackimage(backImage)
   }, [category])
-  
-  console.log(canvas)
+
   useEffect(() => {
-    if(image && canvas) {
-      console.log(image)
-      console.log(canvas)
+    if(canvas) {
       const ctx = canvas.current.getContext("2d") 
       ctx.scale(scale,scale)
       // Gambar, posisi kiri, posisi dari atas, lebar, tinggi

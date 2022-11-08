@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deletecard } from "../redux/modules/cardsSlices";
+import CardImage from "./CardImage";
 
 const List = ({ children }) => {
   const dispatch = useDispatch();
@@ -29,7 +30,14 @@ const List = ({ children }) => {
                     <div className="col-lg-3 col-sm-6" key={card.id} >
                         <div className="item">
                         <div className="thumb">
-                            <img src={card.imagelink} alt="" />
+                            {console.log(card)}
+                            {/* Aku lupa gimana cara bikin biar rapi pakai 1 props aja */}
+                            <CardImage 
+                            title = {card.title}
+                            description = {card.description}
+                            category = {card.category}
+                            imagelink = {card.imagelink}
+                            />
                         </div>
                         <div className="col-12 item-button">
                             <Link className="button-main" to={`/${card.id}`}>Detail</Link>

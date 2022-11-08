@@ -9,7 +9,14 @@ const initialState = {
         id: "1",
         title: "Coba aja",
         imagelink: "https://images-cdn.9gag.com/photo/aQX6YeK_700b.jpg",
-        category: 'Yudhit',
+        category: 'trap',
+        description: "lorem ipsum sadaoidoa assdaidias asduashsdhida",
+      },
+      {
+        id: "2",
+        title: "Coba aja2 ",
+        imagelink: "https://wallsdesk.com/wp-content/uploads/2018/03/Pictures-of-Elk.jpg",
+        category: 'trap',
         description: "lorem ipsum sadaoidoa assdaidias asduashsdhida",
       },
     ],
@@ -27,6 +34,7 @@ const cardsSlice = createSlice({
   initialState,
   reducers: {
     addcard: (state, action) => {
+        console.log("di add card")
         return{
             ...state,
             cards: [...state.cards, action.payload],

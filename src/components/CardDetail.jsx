@@ -8,7 +8,7 @@ const CardDetail = () => {
         <div>
             <div className="goback">
                 <button className="goback_button">
-                    <i class="fa-solid fa-house"></i>
+                    <i className="fa-solid fa-house"></i>
                     Go Home
                 </button>
             </div>
@@ -25,12 +25,12 @@ const CardDetail = () => {
                     <div className="newComment">
                         <h4>ADD NEW COMMENT</h4>
                         <form>
-                            <div class="input-list">
-                                <label for="name">Name</label>
+                            <div className="input-list">
+                                <label htmlFor="name">Name</label>
                                 <input type="text" placeholder="Input your name here" id="name" name="name_input" />
                             </div>
-                            <div class="input-list">
-                                <label for="comment">Comment</label>
+                            <div className="input-list">
+                                <label htmlFor="comment">Comment</label>
                                 <textarea type="text" placeholder="Add your comment here" id="comment" name="comment_input" rows="5" />
                             </div>
                         </form>
