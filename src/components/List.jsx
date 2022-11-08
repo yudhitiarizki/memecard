@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { deletecard } from "../redux/modules/cards.js";
+import { deletecard } from "../redux/modules/cardsSlices";
 
 const List = ({ children }) => {
   const dispatch = useDispatch();
@@ -25,7 +25,8 @@ const List = ({ children }) => {
                 <div className="row col-12">
 
                 {cards.map((card) => (
-                    <div className="col-lg-3 col-sm-6">
+                    // Lupa pakai key 
+                    <div className="col-lg-3 col-sm-6" key={card.id} >
                         <div className="item">
                         <div className="thumb">
                             <img src={card.imagelink} alt="" />
