@@ -296,9 +296,6 @@ Pre-loader Style
   border-radius: 50%;
 }
 
-
-
-
 .search {
   position: relative;
 }
@@ -606,4 +603,146 @@ body {
 
 .header-text{
  display: none;
+}
+
+.top_container{
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardbox{
+  width: 270px;
+}
+
+.cards-container h4{
+  color: #e75e8d;
+  font-weight: 700;
+}
+
+.cards-container .card{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cards-container .card .card-body .card-title{
+  color: black;
+}
+
+.editdel_button{
+  border-width: 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #e75e8d;
+  margin-right: 20px;
+}
+
+.editdel_button:hover{
+  color: #e75e8d;
+  background-color: #fff;
+}
+
+.newComment{
+  width: 600px;
+  height: 360px;
+  background-color: #f2f5fe;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.newComment h4{
+  color: #e75e8d;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.input-list{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-list label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.input-list input {
+  background-color: white;
+  height: 46px;
+  border-radius: 23px;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  padding: 0px 15px 0px 15px;
+  width: 400px;
+}
+
+.input-list input::placeholder {
+  text-align: start;
+  margin-left: 4px;
+}
+
+.input-list textarea {
+  background-color: white;
+  border-radius: 15px;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  padding: 15px 15px 0px 15px;
+  width: 400px;
+}
+
+.input-list textarea::placeholder {
+  text-align: start;
+}
+
+.addcomment_button{
+  border-width: 0px;
+  width: 540px;
+  height: 40px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #e75e8d;
+  margin: 20px auto 0px;
+  font-weight: 600;
+}
+
+.addcomment_button:hover{
+  color: #e75e8d;
+  background-color: #f2f5fe;
+  border: solid 1px #e75e8d;
+}
+
+.goback{
+  margin-bottom: 20px;
+}
+
+.goback_button{
+  border-width: 0px;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  background-color: #e75e8d;
+}
+
+.goback_button i{
+  margin-right: 15px;
+}
+
+.goback_button:hover{
+  color: #e75e8d;
+  background-color: #f2f5fe;
 }
