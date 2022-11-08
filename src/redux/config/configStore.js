@@ -1,10 +1,10 @@
-import { createStore } from "redux";
-import { combineReducers } from "redux";
-import cards from "../modules/cards";
+// Diubah ke versi Redux Toolkit
 
-const rootReducer = combineReducers({
-  cards,
+import { configureStore } from "@reduxjs/toolkit";
+import cards from "../modules/cardsSlices";
+
+const store = configureStore({
+  reducer: { cards : cards },
 });
-const store = createStore(rootReducer);
 
 export default store;
