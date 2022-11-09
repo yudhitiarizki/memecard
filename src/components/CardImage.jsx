@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react"
+import '../assets/css/style.css';
 
-const CardImage = () => {
-  // AMBIL DARI LUAR
-  const title = "lllllllllllllllllllllllllllllllllllll"
-  const imagelink = "https://thiscatdoesnotexist.com/"
-  let category = "trap"
-  const description = "Saat kartu ini aktif, lawan harus memberi makan kucing"
+const CardImage = ({
+  category = "magic",
+  description = "blank card",
+  imagelink = "https://thiscatdoesnotexist.com/",
+  title = "Title",
+}) => {
   
   const [image, setImage] = useState(null)
   const [backImage, setBackimage] = useState(null)
@@ -15,7 +16,7 @@ const CardImage = () => {
     const cardImage = new Image();
     cardImage.src = imagelink
     cardImage.onload = () => setImage(cardImage)
-  }, [])
+  }, [imagelink])
 
   useEffect(() => {
     const backImage = new Image();
@@ -26,15 +27,10 @@ const CardImage = () => {
     }
     backImage.onload = () => setBackimage(backImage)
   }, [category])
-  
-  console.log('ayam')
-  console.log(canvas)
+
   useEffect(() => {
-    console.log('bebek')
-    console.log(canvas)
-    if(image && canvas) {
+    if(image && canvas && backImage) {
       const ctx = canvas.current.getContext("2d") 
-      ctx.scale(0.5,0.5)
       // Gambar, posisi kiri, posisi dari atas, lebar, tinggi
       ctx.drawImage(backImage, 0, 0, 450, 650 )
       // Gambar dibawah menimpa yang atas
@@ -53,18 +49,16 @@ const CardImage = () => {
       ctx.fillStyle = "black"
       ctx.fillText(description, 47, 525, 360, 400)
     }
-  }, [ image, canvas, title, description, backImage, category])
+  },)
 
   return (
     <div>
-        <canvas 
+        <canvas className="canvas"
             ref={canvas}
             // ini ukuran gambar yang ditampilkan
-            width={225}
-            height={325}
-        />
-        {console.log("cicak")}
-        {console.log(canvas)}
+            width={450}
+            height={650}
+            />
     </div>
   )
 }

@@ -50,9 +50,6 @@ const CardDetail = () => {
                     </div>
                 </div>
                 <div>
-                    <div>
-
-                    </div>
                     <div className="newComment">
                         <h4>ADD NEW COMMENT</h4>
                         <div>

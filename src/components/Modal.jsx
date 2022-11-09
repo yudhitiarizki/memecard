@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { useDispatch } from "react-redux";
 import nextId from "react-id-generator";
-import { addcard } from "../redux/modules/cards.js";
+import { addcard } from "../redux/modules/cardsSlices.js";
 
 const Modal = () => {
     const id = nextId();
@@ -25,7 +25,7 @@ const Modal = () => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        
+        console.log("di on submit")
         if (card.title.trim() === "" || card.imagelink.trim() === ""  || card.category.trim() === ""  || card.description.trim() === "") return alert('Fill the Form!');
         dispatch(addcard({ ...card, id })); 
         setcard({
@@ -35,6 +35,7 @@ const Modal = () => {
         category: '',
         description: "",
         });
+        
     };
     return (
         <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -45,7 +46,7 @@ const Modal = () => {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                        <form onSubmit={onSubmitHandler}>
+                        <form onSubmit={onSubmitHandler} >
                             <div className="form-list">
                                 <label >Title</label>
                                 <input type="text" value={card.title} placeholder="Add title name" id="title" name="title" onChange={onChangeHandler} />
@@ -54,7 +55,8 @@ const Modal = () => {
                                 <label >Category</label>
                                 <select value={card.category} type="text" placeholder="Add title name" id="category" name="category" onChange={onChangeHandler}>
                                     <option defaultValue>Choose category</option>
-                                    <option value='cobain aja'>cobain aja</option>
+                                    <option value='magic'>Trap Card</option>
+                                    <option value='trap'>Magic Card</option>
                                 </select>
                             </div>
                             <div className="form-list">
@@ -67,7 +69,8 @@ const Modal = () => {
                             </div>
                             
                             <div className="modal-footer">
-                                <button className="button-main">Create</button>
+                                <button className="button-main" 
+                                data-bs-dismiss="modal" >Create</button>
                             </div>
                         </form>
                         </div>

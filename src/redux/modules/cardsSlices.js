@@ -9,8 +9,15 @@ const initialState = {
         id: "1",
         title: "Coba aja",
         imagelink: "https://images-cdn.9gag.com/photo/aQX6YeK_700b.jpg",
-        category: 'Yudhit',
-        description: "lorem ipsum sadaoidoa assdaidias asduashsdhida",
+        category: 'trap',
+        description: "nggak bisa",
+      },
+      {
+        id: "2",
+        title: "Kijang 1",
+        imagelink: "https://wallsdesk.com/wp-content/uploads/2018/03/Pictures-of-Elk.jpg",
+        category: 'trap',
+        description: "Kijang lompat",
       },
     ],
     card: {
@@ -20,6 +27,8 @@ const initialState = {
       category: '',
       description: "",
     },
+    filtered_cards: [
+    ],
   };
 
 const cardsSlice = createSlice({
@@ -64,8 +73,15 @@ const cardsSlice = createSlice({
             }),
         }
     },
+
+    searchcard: (state, action) => {
+        return{
+          ...state,
+          filtered_cards: state.cards.filter((card)=> Object.keys(card).some((title) => card[title].includes(action.payload.search))) 
+        }
+    },  
   },
 });
 
-export const { addcard, deletecard, getcardByID} = cardsSlice.actions;
+export const { addcard, deletecard, getcardByID, searchcard} = cardsSlice.actions;
 export default cardsSlice.reducer;
