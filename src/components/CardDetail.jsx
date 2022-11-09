@@ -3,9 +3,11 @@ import '../assets/css/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { useParams } from "react-router-dom";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import nextId from "react-id-generator";
 import { addcomment } from "../redux/modules/commentsSlices";
+import { getcardByID } from "../redux/modules/cardsSlices";
+import CardImage from "./CardImage";
 
 const CardDetail = () => {
     const param = useParams();
@@ -15,6 +17,9 @@ const CardDetail = () => {
 
     const [name, setName] = useState('');
     const [comment, setComment] = useState('');
+
+    dispatch(getcardByID(param.id))
+    const card = useSelector((state) => state.cards.card);
 
     const onChangeName = (event) => {
         setName(event.target.value)
@@ -45,7 +50,12 @@ const CardDetail = () => {
             <div className="top_container">
                 <div>
                     <div className="cardbox thumb">
-                        <img src="https://images-cdn.9gag.com/photo/aQX6YeK_700b.jpg" alt="" />
+                        <CardImage 
+                        title = {card.title}
+                        description = {card.description}
+                        category = {card.category}
+                        imagelink = {card.imagelink}
+                        />
                     </div>
                 </div>
                 <div>
