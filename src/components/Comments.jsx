@@ -14,7 +14,7 @@ const Comments = () => {
     const param = useParams();
     const card_id = param.id;
 
-    const [komen, setKomen] = useState(comment.comment);
+    const [komen, setKomen] = useState('');
 
     const getID = (comment_id) => {
         dispatch(getcommentByID(comment_id));
@@ -27,13 +27,14 @@ const Comments = () => {
     const editComment = () => {
         if (komen !== '') {
             dispatch(editcomment({card_id: comment.card_id, comment_id: comment.comment_id, comment: komen}))
+            setKomen('');
         } else {
             return alert('Fill the Form!')
         }
     }
 
-    const deleteComment = (card_id, comment_id) => {
-        dispatch(deletecomment({card_id: card_id, comment_id: comment_id}))
+    const deleteComment = (comment_id) => {
+        dispatch(deletecomment(comment_id))
     }
 
     const filterData = (data) => {
@@ -62,7 +63,7 @@ const Comments = () => {
                             </div>
                             <div>
                                 <button className="editdel_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => getID(komentar.comment_id)}><i className="fa-regular fa-pen-to-square"></i></button>
-                                <button className="editdel_button"><i className="fa-solid fa-trash-can" onClick={() => deleteComment(komentar.card_id, komentar.comment_id)}></i></button>
+                                <button className="editdel_button"><i className="fa-solid fa-trash-can" onClick={() => deleteComment(komentar.comment_id)}></i></button>
                             </div>
                         </div>
             ))}
