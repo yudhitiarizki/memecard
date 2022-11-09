@@ -55,12 +55,12 @@ const CardDetail = () => {
                     <div className="newComment">
                         <h4>ADD NEW COMMENT</h4>
                         <div>
-                            <div class="input-list">
-                                <label for="name">Name</label>
+                            <div className="input-list">
+                                <label >Name</label>
                                 <input type="text" placeholder="Input your name here" id="name" name="name_input" value={name} onChange={onChangeName} />
                             </div>
-                            <div class="input-list">
-                                <label for="comment">Comment</label>
+                            <div className="input-list">
+                                <label >Comment</label>
                                 <textarea type="text" placeholder="Add your comment here" id="comment" name="comment_input" rows="5" value={comment} onChange={onChangeComment} />
                             </div>
                             <button className="addcomment_button" onClick={onClickHandler}>Add New Comment</button>
