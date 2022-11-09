@@ -14,7 +14,7 @@ const Comments = () => {
     const param = useParams();
     const card_id = param.id;
 
-    const [komen, setKomen] = useState(comment.comment);
+    const [komen, setKomen] = useState('');
 
     const getID = (comment_id) => {
         dispatch(getcommentByID(comment_id));
@@ -27,6 +27,7 @@ const Comments = () => {
     const editComment = () => {
         if (komen !== '') {
             dispatch(editcomment({card_id: comment.card_id, comment_id: comment.comment_id, comment: komen}))
+            setKomen('');
         } else {
             return alert('Fill the Form!')
         }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../assets/css/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch} from "react-redux";
 import nextId from "react-id-generator";
 import { addcomment } from "../redux/modules/commentsSlices";
@@ -12,6 +12,7 @@ const CardDetail = () => {
     const dispatch = useDispatch();
     const comment_id = nextId();
     const card_id = param.id;
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [comment, setComment] = useState('');
@@ -37,8 +38,8 @@ const CardDetail = () => {
     return (
         <div>
             <div className="goback">
-                <button className="goback_button">
-                    <i class="fa-solid fa-house"></i>
+                <button className="goback_button" onClick={() => {navigate("/")}}>
+                    <i className="fa-solid fa-house"></i>
                     Go Home
                 </button>
             </div>
@@ -55,11 +56,11 @@ const CardDetail = () => {
                     <div className="newComment">
                         <h4>ADD NEW COMMENT</h4>
                         <div>
-                            <div class="input-list">
+                            <div className="input-list">
                                 <label for="name">Name</label>
                                 <input type="text" placeholder="Input your name here" id="name" name="name_input" value={name} onChange={onChangeName} />
                             </div>
-                            <div class="input-list">
+                            <div className="input-list">
                                 <label for="comment">Comment</label>
                                 <textarea type="text" placeholder="Add your comment here" id="comment" name="comment_input" rows="5" value={comment} onChange={onChangeComment} />
                             </div>
