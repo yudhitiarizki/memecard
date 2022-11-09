@@ -14,7 +14,7 @@ const Comments = () => {
     const param = useParams();
     const card_id = param.id;
 
-    const [komen, setKomen] = useState('');
+    const [komen, setKomen] = useState(comment.comment);
 
     const getID = (comment_id) => {
         dispatch(getcommentByID(comment_id));
@@ -27,7 +27,6 @@ const Comments = () => {
     const editComment = () => {
         if (komen !== '') {
             dispatch(editcomment({card_id: comment.card_id, comment_id: comment.comment_id, comment: komen}))
-            setKomen('');
         } else {
             return alert('Fill the Form!')
         }
@@ -37,14 +36,26 @@ const Comments = () => {
         dispatch(deletecomment({card_id: card_id, comment_id: comment_id}))
     }
 
+    const filterData = (data) => {
+        var data_baru = [];
+ 
+        data.forEach(function (dt) {
+            if (dt.card_id === card_id){
+                data_baru.push(dt);
+            }
+        });
+
+        return data_baru;
+    };
+
+    const dataKomen = filterData(comments);
+
     return (
         <div className="cards-container">
             <h4>COMMENTS</h4>
             
-            {comments.map((komentar) => {
-                if (komentar.card_id === card_id) {
-                    return (
-                        <div className="card" key={komentar.comment_id}>
+            {dataKomen.map((komentar) => (
+                        <div className="card" key={komentar.card_id}>
                             <div className="card-body">
                                 <h5 className="card-title">{komentar.name}</h5>
                                 <p className="card-text">{komentar.comment}</p>
@@ -54,9 +65,7 @@ const Comments = () => {
                                 <button className="editdel_button"><i className="fa-solid fa-trash-can" onClick={() => deleteComment(komentar.card_id, komentar.comment_id)}></i></button>
                             </div>
                         </div>
-                    )
-                }
-            })}
+            ))}
 
             {/* === Modal === */}
             <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
