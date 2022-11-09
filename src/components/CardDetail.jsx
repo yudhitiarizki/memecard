@@ -27,8 +27,8 @@ const CardDetail = () => {
     const onClickHandler = () => {
         if (name !== '' && comment !== '') {
             dispatch(addcomment({card_id: card_id, comment_id: comment_id, name: name, comment: comment}));
-            setName = '';
-            setComment = '';
+            setName('');
+            setComment('');
         } else {
             return alert('Fill the Form!')
         }
