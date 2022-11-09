@@ -38,7 +38,7 @@ const CardDetail = () => {
         <div>
             <div className="goback">
                 <button className="goback_button">
-                    <i class="fa-solid fa-house"></i>
+                    <i className="fa-solid fa-house"></i>
                     Go Home
                 </button>
             </div>
