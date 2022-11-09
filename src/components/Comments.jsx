@@ -43,17 +43,23 @@ const Comments = () => {
 
             {comments.map((komentar) => {
                 if (komentar.card_id === card_id) {
-                    <div className="card" key={komentar.comment_id}>
-                        <div className="card-body">
-                            <h5 className="card-title">{komentar.name}</h5>
-                            <p className="card-text">{komentar.comment}</p>
+                    return (
+                        <div className="card" key={komentar.comment_id}>
+                            <div className="card-body">
+                                <h5 className="card-title">{komentar.name}</h5>
+                                <p className="card-text">{komentar.comment}</p>
+                            </div>
+                            <div>
+                                <button className="editdel_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => getID(komentar.comment_id)}><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button className="editdel_button"><i class="fa-solid fa-trash-can" onClick={() => deleteComment(komentar.card_id, komentar.comment_id)}></i></button>
+                            </div>
                         </div>
                         <div>
                             <button className="editdel_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => getID(komentar.comment_id)}><i class="fa-regular fa-pen-to-square"></i></button>
                             <button className="editdel_button"><i class="fa-solid fa-trash-can" onClick={() => deleteComment(komentar.card_id, komentar.comment_id)}></i></button>
                         </div>
                     </div>
-                }
+            )}
             })}
 
             {/* === Modal === */}
