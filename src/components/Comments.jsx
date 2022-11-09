@@ -44,7 +44,7 @@ const Comments = () => {
             {comments.map((komentar) => {
                 if (komentar.card_id === card_id) {
                     return (
-                        <div className="card">
+                        <div className="card" key={komentar.comment_id}>
                             <div className="card-body">
                                 <h5 className="card-title">{komentar.name}</h5>
                                 <p className="card-text">{komentar.comment}</p>
