@@ -40,7 +40,7 @@ const Comments = () => {
     return (
         <div className="cards-container">
             <h4>COMMENTS</h4>
-
+            
             {comments.map((komentar) => {
                 if (komentar.card_id === card_id) {
                     return (
@@ -50,8 +50,8 @@ const Comments = () => {
                                 <p className="card-text">{komentar.comment}</p>
                             </div>
                             <div>
-                                <button className="editdel_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => getID(komentar.comment_id)}><i class="fa-regular fa-pen-to-square"></i></button>
-                                <button className="editdel_button"><i class="fa-solid fa-trash-can" onClick={() => deleteComment(komentar.card_id, komentar.comment_id)}></i></button>
+                                <button className="editdel_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={() => getID(komentar.comment_id)}><i className="fa-regular fa-pen-to-square"></i></button>
+                                <button className="editdel_button"><i className="fa-solid fa-trash-can" onClick={() => deleteComment(komentar.card_id, komentar.comment_id)}></i></button>
                             </div>
                         </div>
                     )
@@ -59,7 +59,7 @@ const Comments = () => {
             })}
 
             {/* === Modal === */}
-            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content mc_editcomment">
                         <div className="modal-header">
@@ -68,7 +68,7 @@ const Comments = () => {
                         </div>
                         <div className="modal-body">
                             <div className="input-list2">
-                                <label for="comment2">Comment</label>
+                                <label >Comment</label>
                                 <textarea type="text" id="comment2" className="comment2" rows="5" value={komen} onChange={onChangeHandler}/>
                             </div>
                         </div>
