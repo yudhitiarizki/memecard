@@ -746,3 +746,69 @@ body {
   color: #e75e8d;
   background-color: #f2f5fe;
 }
+
+.save_btn{
+  border-width: 0px;
+  width: 70px;
+  height: 40px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #e75e8d;
+}
+
+.save_btn:hover{
+  color: #e75e8d;
+  background-color: #fff;
+}
+
+.input-list2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-list2 label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.input-list2 input {
+  background-color: #f2f5fe;
+  height: 46px;
+  border-radius: 23px;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  padding: 0px 15px 0px 15px;
+  width: 300px;
+}
+
+.input-list2 input::placeholder {
+  text-align: start;
+  margin-left: 4px;
+}
+
+.input-list2 textarea {
+  background-color: #f2f5fe;
+  border-radius: 15px;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  padding: 15px 15px 0px 15px;
+  width: 300px;
+}
+
+.input-list2 textarea::placeholder {
+  text-align: start;
+}
+
+.mc_editcomment{
+  padding: 20px;
+}
+
+.mt-ec{
+  font-weight: 600;
+  font-size: 24px;
+}
