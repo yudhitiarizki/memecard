@@ -9,7 +9,13 @@ import CardImage from "./CardImage";
 
 const List = ({ children }) => {
   const dispatch = useDispatch();
-  const cards = useSelector((state) => state.cards.cards);
+
+  const cards_tersaring = useSelector((state)=> state.cards.filtered_cards)
+  const cards_semua = useSelector((state) => state.cards.cards)
+
+  var cards = cards_tersaring.length === 0 ? cards_semua:  cards_tersaring
+
+  console.log(cards)
 
   const onDeletecard = (id) => {
     dispatch(deletecard(id));
@@ -30,7 +36,6 @@ const List = ({ children }) => {
                     <div className="col-lg-3 col-sm-6" key={card.id} >
                         <div className="item">
                         <div className="thumb">
-                            {console.log(card)}
                             {/* Aku lupa gimana cara bikin biar rapi pakai 1 props aja */}
                             <CardImage 
                             title = {card.title}
