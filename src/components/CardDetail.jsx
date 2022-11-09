@@ -2,19 +2,25 @@ import React, { useState } from "react";
 import '../assets/css/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import { useParams } from "react-router-dom";
-import { useDispatch} from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import nextId from "react-id-generator";
 import { addcomment } from "../redux/modules/commentsSlices";
+import CardImage from "./CardImage";
+import { getcardByID } from "../redux/modules/cardsSlices";
 
 const CardDetail = () => {
     const param = useParams();
     const dispatch = useDispatch();
     const comment_id = nextId();
     const card_id = param.id;
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [comment, setComment] = useState('');
+
+    dispatch(getcardByID(param.id))
+    const card = useSelector((state) => state.cards.card)
 
     const onChangeName = (event) => {
         setName(event.target.value)
@@ -26,7 +32,7 @@ const CardDetail = () => {
 
     const onClickHandler = () => {
         if (name !== '' && comment !== '') {
-            dispatch(addcomment({card_id: card_id, comment_id: comment_id, name: name, comment: comment}));
+            dispatch(addcomment({ card_id: card_id, comment_id: comment_id, name: name, comment: comment }));
             setName('');
             setComment('');
         } else {
@@ -37,7 +43,7 @@ const CardDetail = () => {
     return (
         <div>
             <div className="goback">
-                <button className="goback_button">
+                <button className="goback_button" onClick={() => { navigate("/") }}>
                     <i className="fa-solid fa-house"></i>
                     Go Home
                 </button>
@@ -45,13 +51,15 @@ const CardDetail = () => {
             <div className="top_container">
                 <div>
                     <div className="cardbox thumb">
-                        <img src="https://images-cdn.9gag.com/photo/aQX6YeK_700b.jpg" alt="" />
+                        <CardImage
+                            title={card.title}
+                            description={card.description}
+                            category={card.category}
+                            imagelink={card.imagelink}
+                        />
                     </div>
                 </div>
                 <div>
-                    <div>
-
-                    </div>
                     <div className="newComment">
                         <h4>ADD NEW COMMENT</h4>
                         <div>
