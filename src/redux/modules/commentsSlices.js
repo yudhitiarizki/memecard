@@ -39,7 +39,7 @@ const commentsSlice = createSlice({
     deletecomment: (state, action) => {
       return {
         ...state,
-        comments: state.comments.filter((comment) => (comment.comment_id !== action.payload)),
+        comments: state.comments.filter((comment) => (comment.card_id !== action.payload.card_id && comment.comment_id !== action.payload.comment_id)),
       }
     },
 

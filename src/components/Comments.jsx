@@ -56,7 +56,7 @@ const Comments = () => {
             <h4>COMMENTS</h4>
             
             {dataKomen.map((komentar) => (
-                        <div className="card" key={komentar.card_id}>
+                        <div className="card" key={komentar.comment_id}>
                             <div className="card-body">
                                 <h5 className="card-title">{komentar.name}</h5>
                                 <p className="card-text">{komentar.comment}</p>
@@ -66,10 +66,11 @@ const Comments = () => {
                                 <button className="editdel_button"><i className="fa-solid fa-trash-can" onClick={() => deleteComment(komentar.comment_id)}></i></button>
                             </div>
                         </div>
-            ))}
+                    )
+            )}
 
             {/* === Modal === */}
-            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content mc_editcomment">
                         <div className="modal-header">
@@ -78,7 +79,7 @@ const Comments = () => {
                         </div>
                         <div className="modal-body">
                             <div className="input-list2">
-                                <label >Comment</label>
+                                <label for="comment2">Comment</label>
                                 <textarea type="text" id="comment2" className="comment2" rows="5" value={komen} onChange={onChangeHandler}/>
                             </div>
                         </div>
