@@ -55,7 +55,7 @@ const Comments = () => {
             <h4>COMMENTS</h4>
             
             {dataKomen.map((komentar) => (
-                        <div className="card" key={komentar.card_id}>
+                        <div className="card" key={komentar.comment_id}>
                             <div className="card-body">
                                 <h5 className="card-title">{komentar.name}</h5>
                                 <p className="card-text">{komentar.comment}</p>
@@ -66,8 +66,7 @@ const Comments = () => {
                             </div>
                         </div>
                     )
-                }
-            })}
+            )}
 
             {/* === Modal === */}
             <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
